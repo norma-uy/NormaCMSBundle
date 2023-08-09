@@ -1,0 +1,25 @@
+{
+    "name": "norma-uy/norma-cms-bundle",
+    "type": "symfony-bundle",
+    "description": "CMS base for Symfony applications",
+    "keywords": ["cms", "backend", "admin", "template"],
+    "homepage": "https://github.com/norma-uy/NormaCMSBundle",
+    "license": "MIT",
+    "authors": [
+        {
+            "name": "Project Contributors",
+            "homepage": "https://github.com/norma-uy/NormaCMSBundle/graphs/contributors"
+        }
+    ],
+    "require": {
+        "php": ">=8.0.2",
+        "symfony/framework-bundle": "^5.4|^6.0",
+        "symfony/http-foundation": "^5.4|^6.0",
+        "symfony/http-kernel": "^5.4|^6.0"
+    },
+    "autoload": {
+        "psr-4": {
+            "NormaUy\\Bundle\\NormaCmsBundle\\": "src/"
+        }
+    }
+}
