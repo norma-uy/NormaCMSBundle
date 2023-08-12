@@ -2,7 +2,9 @@
 
 namespace NormaUy\Bundle\NormaCMSBundle;
 
+use NormaUy\Bundle\NormaCMSBundle\DependencyInjection\NormaCMSExtension;
 use Symfony\Component\DependencyInjection\ContainerBuilder;
+use Symfony\Component\DependencyInjection\Extension\ExtensionInterface;
 use Symfony\Component\HttpKernel\Bundle\AbstractBundle;
 
 /**
@@ -14,5 +16,10 @@ class NormaCMSBundle extends AbstractBundle
 
     public function build(ContainerBuilder $container): void
     {
+    }
+
+    public function getContainerExtension(): ?ExtensionInterface
+    {
+        return new NormaCMSExtension();
     }
 }

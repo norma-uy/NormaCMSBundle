@@ -11,7 +11,7 @@ use Twig\TwigFunction;
 /**
  * @author Samuel Alvarez <samale456uruguay@gmail.com>
  */
-class Extension extends AbstractExtension
+class NormaCMSTwigExtension extends AbstractExtension
 {
     public function __construct(private ParameterBagInterface $params)
     {

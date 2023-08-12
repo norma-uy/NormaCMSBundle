@@ -27,15 +27,8 @@ abstract class Media implements MediaInterface
     #[ORM\Column(length: 255)]
     protected ?string $slug = null;
 
-    #[ORM\Column(length: 255, nullable: true)]
-    protected ?string $altText = null;
-
     #[ORM\Column]
     protected ?\DateTimeImmutable $createdAt = null;
-
-    #[ORM\ManyToOne(inversedBy: 'media')]
-    #[ORM\JoinColumn(nullable: false)]
-    protected ?User $author = null;
 
     #[
         Vich\UploadableField(
@@ -64,6 +57,12 @@ abstract class Media implements MediaInterface
     #[ORM\Column(nullable: true)]
     protected ?array $dimensions = [];
 
+    #[ORM\Column(length: 255, nullable: true)]
+    protected ?string $altText = null;
+
+    #[ORM\Column(length: 255, nullable: true)]
+    protected ?string $caption = null;
+
     #[Vich\UploadableField(mapping: 'media.450w', fileNameProperty: 'imageFileName450w')]
     public ?File $imageFile450w = null;
 
@@ -85,8 +84,9 @@ abstract class Media implements MediaInterface
     #[ORM\ManyToMany(targetEntity: MediaCategory::class, mappedBy: 'medias')]
     protected Collection $mediaCategories;
 
-    #[ORM\Column(length: 255, nullable: true)]
-    protected ?string $caption = null;
+    #[ORM\ManyToOne(inversedBy: 'media')]
+    #[ORM\JoinColumn(nullable: false)]
+    protected ?User $author = null;
 
     public function __construct()
     {
@@ -123,18 +123,6 @@ abstract class Media implements MediaInterface
         return $this;
     }
 
-    public function getAltText(): ?string
-    {
-        return $this->altText;
-    }
-
-    public function setAltText(?string $altText): self
-    {
-        $this->altText = $altText;
-
-        return $this;
-    }
-
     public function getCreatedAt(): ?\DateTimeImmutable
     {
         return $this->createdAt;
@@ -143,18 +131,6 @@ abstract class Media implements MediaInterface
     public function setCreatedAt(\DateTimeImmutable $createdAt): self
     {
         $this->createdAt = $createdAt;
-
-        return $this;
-    }
-
-    public function getAuthor(): ?User
-    {
-        return $this->author;
-    }
-
-    public function setAuthor(?User $author): self
-    {
-        $this->author = $author;
 
         return $this;
     }
@@ -231,9 +207,28 @@ abstract class Media implements MediaInterface
         return $this;
     }
 
-    public function __toString(): string
+    public function getAltText(): ?string
     {
-        return !empty($this->title) ? $this->title : (string) $this->originalFileName ?? '';
+        return $this->altText;
+    }
+
+    public function setAltText(?string $altText): self
+    {
+        $this->altText = $altText;
+
+        return $this;
+    }
+
+    public function getCaption(): ?string
+    {
+        return $this->caption;
+    }
+
+    public function setCaption(?string $caption): static
+    {
+        $this->caption = $caption;
+
+        return $this;
     }
 
     public function getMedia(): self
@@ -268,15 +263,20 @@ abstract class Media implements MediaInterface
         return $this;
     }
 
-    public function getCaption(): ?string
+    public function getAuthor(): ?User
     {
-        return $this->caption;
+        return $this->author;
     }
 
-    public function setCaption(?string $caption): static
+    public function setAuthor(?User $author): self
     {
-        $this->caption = $caption;
+        $this->author = $author;
 
         return $this;
+    }
+
+    public function __toString(): string
+    {
+        return !empty($this->title) ? $this->title : (string) $this->originalFileName ?? '';
     }
 }

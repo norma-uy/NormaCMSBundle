@@ -14,11 +14,8 @@ use Symfony\Component\HttpFoundation\Request;
  */
 class ReCaptchaValidationListener implements EventSubscriberInterface
 {
-    private $reCaptcha;
-
-    public function __construct(ReCaptcha $reCaptcha)
+    public function __construct(private ReCaptcha $reCaptcha)
     {
-        $this->reCaptcha = $reCaptcha;
     }
 
     public static function getSubscribedEvents()
