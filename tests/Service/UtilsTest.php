@@ -11,7 +11,7 @@ use PHPUnit\Framework\TestCase;
  */
 class UtilsTest extends TestCase
 {
-    public function testGetWords()
+    public function testUnit()
     {
         $utils = new Utils();
 

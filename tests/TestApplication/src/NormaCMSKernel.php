@@ -41,12 +41,12 @@ final class NormaCMSKernel extends SymfonyKernel
 
     public function getCacheDir(): string
     {
-        return './var/' . $this->environment . '/cache';
+        return \dirname(__DIR__) . '\/var\/' . $this->environment . '\/cache\/' . spl_object_hash($this);
     }
 
     public function getLogDir(): string
     {
-        return './var/' . $this->environment . '/log';
+        return \dirname(__DIR__) . '\/var\/' . $this->environment . '/log';
     }
 
     public function getProjectDir(): string

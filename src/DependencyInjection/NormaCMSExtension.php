@@ -15,7 +15,18 @@ class NormaCMSExtension extends Extension
 
     public function load(array $configs, ContainerBuilder $container): void
     {
+        $configuration = new NormaCMSConfiguration();
+        $config = $this->processConfiguration($configuration, $configs);
+
+        $container->setParameter($this->getAlias() . '.recaptcha.enable', $config['recaptcha']['enable']);
+        $container->setParameter($this->getAlias() . '.pages.permalink', $config['pages']['permalink']);
+
         $loader = new PhpFileLoader($container, new FileLocator(__DIR__ . '/../Resources/config'));
         $loader->load('services.php');
+    }
+
+    public function getAlias(): string
+    {
+        return 'norma_cms_bundle';
     }
 }

@@ -19,5 +19,6 @@ $container->loadFromExtension('doctrine', [
                 'alias' => 'app',
             ],
         ],
+        'report_fields_where_declared' => true,
     ],
 ]);

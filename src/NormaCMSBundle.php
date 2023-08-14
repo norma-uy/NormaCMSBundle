@@ -20,6 +20,9 @@ class NormaCMSBundle extends AbstractBundle
 
     public function getContainerExtension(): ?ExtensionInterface
     {
-        return new NormaCMSExtension();
+        if (null === $this->extension) {
+            $this->extension = new NormaCMSExtension();
+        }
+        return $this->extension;
     }
 }

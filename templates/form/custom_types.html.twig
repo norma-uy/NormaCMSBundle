@@ -1,3 +1,5 @@
 {% block re_captcha_row %}
-    <div id="{{ id }}" class="recaptcha" data-toggle="recaptcha" data-type="{{ type }}"></div>
+	{% if norma_cms_bundle_recaptcha_enable %}
+		<div id="{{ id }}" class="recaptcha" data-toggle="recaptcha" data-type="{{ type }}"></div>
+	{% endif %}
 {% endblock re_captcha_row %}
