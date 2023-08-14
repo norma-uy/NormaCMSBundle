@@ -8,7 +8,9 @@ composer.lock
 .php-cs-fixer.cache
 phpcs.xml
 .phpcs-cache
-.php_cs.cache
+.php_cs.
+/tests/cache
+var
 ###< phpunit/phpunit ###
 
 ###> error log files ###
