@@ -11,7 +11,7 @@
 /phpstan-baseline.neon export-ignore
 /phpstan.neon.dist export-ignore
 /assets export-ignore
-/yarn export-ignore
+/.yarn export-ignore
 /yarn.lock export-ignore
 /.yarnrc.yml export-ignore
 /package.json export-ignore
