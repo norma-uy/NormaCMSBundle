@@ -8,6 +8,7 @@ use Symfony\Component\Form\FormError;
 use Symfony\Component\Form\FormEvent;
 use Symfony\Component\Form\FormEvents;
 use Symfony\Component\HttpFoundation\Request;
+use function Symfony\Component\Translation\t;
 
 /**
  * @author Samuel Alvarez <samale456uruguay@gmail.com>
@@ -34,7 +35,7 @@ class ReCaptchaValidationListener implements EventSubscriberInterface
             ->verify($request->request->get('g-recaptcha-response'), $request->getClientIp());
 
         if (!$result->isSuccess()) {
-            $event->getForm()->addError(new FormError('El captcha no es válido. Inténtalo de nuevo.'));
+            $event->getForm()->addError(new FormError(t('recaptcha.invalid_captcha', domain: 'NormaCMSBundle')));
         }
     }
 }

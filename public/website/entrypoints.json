@@ -1,0 +1,10 @@
+{
+  "entrypoints": {
+    "app-recaptcha": {
+      "js": [
+        "/website/runtime.ea9be3f4.js",
+        "/website/app-recaptcha.8d84001e.js"
+      ]
+    }
+  }
+}

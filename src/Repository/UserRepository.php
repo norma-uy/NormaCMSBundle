@@ -1,8 +1,8 @@
 <?php
 
-namespace App\Repository;
+namespace NormaUy\Bundle\NormaCMSBundle\Repository;
 
-use App\Entity\User;
+use NormaUy\Bundle\NormaCMSBundle\Entity\User;
 use Doctrine\Bundle\DoctrineBundle\Repository\ServiceEntityRepository;
 use Doctrine\Persistence\ManagerRegistry;
 use Symfony\Component\Security\Core\Exception\UnsupportedUserException;

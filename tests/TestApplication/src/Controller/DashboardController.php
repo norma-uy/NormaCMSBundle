@@ -20,8 +20,7 @@ class DashboardController extends AbstractDashboardController
 
     public function configureDashboard(): Dashboard
     {
-        return Dashboard::new()
-            ->setTitle('EasyAdmin Tests');
+        return Dashboard::new()->setTitle('EasyAdmin Tests');
     }
 
     public function configureMenuItems(): iterable

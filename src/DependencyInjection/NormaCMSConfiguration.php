@@ -12,42 +12,42 @@ use Symfony\Component\Config\Definition\ConfigurationInterface;
  */
 class NormaCMSConfiguration implements ConfigurationInterface
 {
-	public function getConfigTreeBuilder(): TreeBuilder
-	{
-		$treeBuilder = new TreeBuilder('norma_cms_bundle');
+    public function getConfigTreeBuilder(): TreeBuilder
+    {
+        $treeBuilder = new TreeBuilder('norma_cms_bundle');
 
-		$rootNode = $treeBuilder->getRootNode();
+        $rootNode = $treeBuilder->getRootNode();
 
-		$rootNode
-			->children()
-			->arrayNode('recaptcha')
-			->addDefaultsIfNotSet()
-			->append($this->enableNode())
-			->info('')
-			->end()
-			->arrayNode('pages')
-			->addDefaultsIfNotSet()
-			->append($this->permalinkNode())
-			->info('')
-			->end()
-			->end();
+        $rootNode
+            ->children()
+            ->arrayNode('recaptcha')
+            ->addDefaultsIfNotSet()
+            ->append($this->enableNode())
+            ->info('')
+            ->end()
+            ->arrayNode('pages')
+            ->addDefaultsIfNotSet()
+            ->append($this->permalinkNode())
+            ->info('')
+            ->end()
+            ->end();
 
-		return $treeBuilder;
-	}
+        return $treeBuilder;
+    }
 
-	private function enableNode(): BooleanNodeDefinition
-	{
-		$node = new BooleanNodeDefinition('enable');
-		$node->defaultTrue();
+    private function enableNode(): BooleanNodeDefinition
+    {
+        $node = new BooleanNodeDefinition('enable');
+        $node->defaultTrue();
 
-		return $node;
-	}
+        return $node;
+    }
 
-	private function permalinkNode(): VariableNodeDefinition
-	{
-		$node = new VariableNodeDefinition('permalink');
-		$node->defaultValue('\/{slug}\/');
+    private function permalinkNode(): VariableNodeDefinition
+    {
+        $node = new VariableNodeDefinition('permalink');
+        $node->defaultValue('\/{slug}\/');
 
-		return $node;
-	}
+        return $node;
+    }
 }

@@ -18,13 +18,16 @@ class ErrorDashboardController extends AbstractDashboardController
 
     public function configureDashboard(): Dashboard
     {
-        return Dashboard::new()
-            ->setTitle('EasyAdmin Tests - Errors');
+        return Dashboard::new()->setTitle('EasyAdmin Tests - Errors');
     }
 
     public function configureMenuItems(): iterable
     {
         yield MenuItem::linktoDashboard('Error Dashboard', 'fa fa-home');
-        yield MenuItem::linkToCrud('ErrorFieldDoesNotBelongToAnyTabCrudController', null, ErrorFieldDoesNotBelongToAnyTabCrudController::class);
+        yield MenuItem::linkToCrud(
+            'ErrorFieldDoesNotBelongToAnyTabCrudController',
+            null,
+            ErrorFieldDoesNotBelongToAnyTabCrudController::class,
+        );
     }
 }

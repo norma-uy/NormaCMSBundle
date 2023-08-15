@@ -2,7 +2,13 @@
     "name": "norma-uy/norma-cms-bundle",
     "type": "symfony-bundle",
     "description": "CMS base for Symfony applications",
-    "keywords": ["cms", "backend", "admin", "template", "symfony"],
+    "keywords": [
+        "cms",
+        "backend",
+        "admin",
+        "template",
+        "symfony"
+    ],
     "homepage": "https://github.com/norma-uy/NormaCMSBundle",
     "license": "MIT",
     "authors": [

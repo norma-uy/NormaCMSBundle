@@ -1,12 +1,11 @@
 <?php
 
-namespace App\Repository;
+namespace NormaUy\Bundle\NormaCMSBundle\Repository;
 
-use App\Entity\Post;
+use NormaUy\Bundle\NormaCMSBundle\Entity\Post;
 use DateTime;
 use DateTimeImmutable;
 use Doctrine\Bundle\DoctrineBundle\Repository\ServiceEntityRepository;
-use Doctrine\Common\Collections\ArrayCollection;
 use Doctrine\Persistence\ManagerRegistry;
 
 /**

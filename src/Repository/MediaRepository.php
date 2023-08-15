@@ -1,10 +1,9 @@
 <?php
 
-namespace App\Repository;
+namespace NormaUy\Bundle\NormaCMSBundle\Repository;
 
-use App\Entity\Media;
+use NormaUy\Bundle\NormaCMSBundle\Entity\Media;
 use Doctrine\Bundle\DoctrineBundle\Repository\ServiceEntityRepository;
-use Doctrine\ORM\QueryBuilder;
 use Doctrine\ORM\Tools\Pagination\Paginator;
 use Doctrine\Persistence\ManagerRegistry;
 

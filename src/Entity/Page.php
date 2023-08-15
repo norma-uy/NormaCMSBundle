@@ -2,7 +2,7 @@
 
 namespace NormaUy\Bundle\NormaCMSBundle\Entity;
 
-use App\Repository\PageRepository;
+use NormaUy\Bundle\NormaCMSBundle\Repository\PageRepository;
 use Doctrine\ORM\Mapping as ORM;
 
 /**

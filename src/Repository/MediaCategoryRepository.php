@@ -1,8 +1,8 @@
 <?php
 
-namespace App\Repository;
+namespace NormaUy\Bundle\NormaCMSBundle\Repository;
 
-use App\Entity\MediaCategory;
+use NormaUy\Bundle\NormaCMSBundle\Entity\MediaCategory;
 use Doctrine\Bundle\DoctrineBundle\Repository\ServiceEntityRepository;
 use Doctrine\Persistence\ManagerRegistry;
 

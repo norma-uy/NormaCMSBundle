@@ -2,7 +2,7 @@
 
 namespace NormaUy\Bundle\NormaCMSBundle\Entity;
 
-use App\Repository\PostRepository;
+use NormaUy\Bundle\NormaCMSBundle\Repository\PostRepository;
 use DateTimeImmutable;
 use Doctrine\Common\Collections\ArrayCollection;
 use Doctrine\Common\Collections\Collection;

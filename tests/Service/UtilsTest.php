@@ -15,7 +15,7 @@ class UtilsTest extends TestCase
     {
         $utils = new Utils();
 
-        $isMobile = $utils->isMobile("");
+        $isMobile = $utils->isMobile('');
         $this->assertIsBool($isMobile);
     }
 
@@ -28,7 +28,7 @@ class UtilsTest extends TestCase
 
         $this->assertInstanceOf(Utils::class, $utils);
 
-        $isMobile = $utils->isMobile("");
+        $isMobile = $utils->isMobile('');
         $this->assertIsBool($isMobile);
     }
 }

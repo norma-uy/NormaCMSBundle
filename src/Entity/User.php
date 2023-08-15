@@ -2,7 +2,7 @@
 
 namespace NormaUy\Bundle\NormaCMSBundle\Entity;
 
-use App\Repository\UserRepository;
+use NormaUy\Bundle\NormaCMSBundle\Repository\UserRepository;
 use Doctrine\Common\Collections\ArrayCollection;
 use Doctrine\Common\Collections\Collection;
 use Doctrine\ORM\Mapping as ORM;

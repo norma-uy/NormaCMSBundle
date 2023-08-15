@@ -37,9 +37,7 @@ $configuration = [
         'ROLE_ADMIN' => ['ROLE_USER'],
     ],
 
-    'access_control' => [
-        ['path' => '^/secure_admin', 'roles' => ['ROLE_USER']],
-    ],
+    'access_control' => [['path' => '^/secure_admin', 'roles' => ['ROLE_USER']]],
 ];
 
 $container->loadFromExtension('security', $configuration);

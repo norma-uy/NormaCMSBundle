@@ -1,6 +1,18 @@
-vendor
 composer.phar
 composer.lock
+
+###> symfony/framework-bundle ###
+/.env.local
+/.env.local.php
+/.env.*.local
+/config/secrets/prod/prod.decrypt.private.php
+/public/bundles/
+/public/storage/tmp/*
+/public/storage/media/*
+!/public/storage/media/.gitignore
+/var/
+/vendor/
+###< symfony/framework-bundle ###
 
 ###> phpunit/phpunit ###
 /phpunit.xml
@@ -59,7 +71,6 @@ sftp-config.json
 !.yarn/releases
 !.yarn/sdks
 !.yarn/versions
-/public/build/
 npm-debug.log
 yarn-error.log
 ###< symfony/webpack-encore-bundle ###

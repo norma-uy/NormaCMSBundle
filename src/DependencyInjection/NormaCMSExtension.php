@@ -12,7 +12,6 @@ use Symfony\Component\HttpKernel\DependencyInjection\Extension;
  */
 class NormaCMSExtension extends Extension
 {
-
     public function load(array $configs, ContainerBuilder $container): void
     {
         $configuration = new NormaCMSConfiguration();
@@ -21,8 +20,9 @@ class NormaCMSExtension extends Extension
         $container->setParameter($this->getAlias() . '.recaptcha.enable', $config['recaptcha']['enable']);
         $container->setParameter($this->getAlias() . '.pages.permalink', $config['pages']['permalink']);
 
-        $loader = new PhpFileLoader($container, new FileLocator(__DIR__ . '/../Resources/config'));
+        $loader = new PhpFileLoader($container, new FileLocator(__DIR__ . '/../../config'));
         $loader->load('services.php');
+        $loader->load('recaptcha.php');
     }
 
     public function getAlias(): string
